@@ -1,10 +1,16 @@
 import QtQuick 1.0
 
-Row {
+Rectangle {
+    width: 360
+    height: 360
     Text {
-        id: text1
-        text: "Hello World"
+        text: qsTr("Hello World")
+        anchors.centerIn: parent
     }
-
-    Text { text: text1.text }
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {
+            Qt.quit();
+        }
+    }
 }
